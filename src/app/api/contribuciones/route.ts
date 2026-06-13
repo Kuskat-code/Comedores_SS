@@ -19,6 +19,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Faltan campos requeridos" }, { status: 400 });
   }
 
+  if (!supabaseAdmin) {
+    return NextResponse.json({ error: "Supabase no está configurado" }, { status: 503 });
+  }
+
   const { error } = await supabaseAdmin
     .from("contribuciones")
     .insert({ puesto_id, tipo, datos });
