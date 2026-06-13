@@ -1,35 +1,47 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { supabaseAdmin } from "@/lib/supabase-server";
+import { requireAuth } from "@/lib/requireAuth";
+import { puestosQuerySchema } from "./validation";
 
 export async function GET(req: NextRequest) {
-  const { searchParams } = req.nextUrl;
-  const precioMax = searchParams.get("precioMax");
-  const categoria = searchParams.get("categoria");
-  const lat = searchParams.get("lat");
-  const lng = searchParams.get("lng");
-  const radioMetros = searchParams.get("radio") ?? "300";
-
-  let query = supabaseAdmin.from("puestos").select("*").eq("activo", true);
-
-  if (precioMax) query = query.lte("precio_min", Number.parseFloat(precioMax));
-  if (categoria) query = query.eq("categoria", categoria);
-
-  const { data, error } = await query;
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-
-  let resultado = data ?? [];
-  if (lat && lng) {
-    const latN = Number.parseFloat(lat);
-    const lngN = Number.parseFloat(lng);
-    const radio = Number.parseFloat(radioMetros);
-    resultado = resultado.filter((p) => {
-      const dist = calcularDistanciaMetros(latN, lngN, p.lat, p.lng);
-      return dist <= radio;
-    });
+  // Authenticate request
+  try {
+    await requireAuth(req);
+  } catch (e:any) {
+    return NextResponse.json({ error: e.message }, { status: 401 });
   }
 
-  return NextResponse.json(resultado);
+  // Validate query parameters
+  const queryParams = Object.fromEntries(req.nextUrl.searchParams.entries());
+  const validation = puestosQuerySchema.safeParse(queryParams);
+  if (!validation.success) {
+    return NextResponse.json({ error: validation.error.errors.map(err=>err.message).join(', ') }, { status: 400 });
+  }
+  const { precioMax, categoria, lat, lng, radio } = validation.data;
+  // Build query using validated parameters
+  let query = supabaseAdmin.from('puestos').select('*').eq('activo', true);
+
+  if (categoria) query = query.eq('categoria', categoria);
+  if (precioMax !== undefined) query = query.lte('precio_min', precioMax);
+  if (lat !== undefined && lng !== undefined) {
+    // Filter by radius if provided (default 300 meters)
+    const radius = radio ?? 300;
+    const filtered = [];
+    const dataResult = await query; // fetch once, then filter in memory
+    if (dataResult.error) return NextResponse.json({ error: dataResult.error.message }, { status: 500 });
+    const all = dataResult.data ?? [];
+    for (const p of all) {
+      const dist = calcularDistanciaMetros(lat, lng, p.lat, p.lng);
+      if (dist <= radius) filtered.push(p);
+    }
+    return NextResponse.json(filtered);
+  }
+
+  // No geo‑filter – just return the query result
+  const { data, error } = await query;
+  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  return NextResponse.json(data);
 }
 
 function calcularDistanciaMetros(lat1: number, lng1: number, lat2: number, lng2: number) {

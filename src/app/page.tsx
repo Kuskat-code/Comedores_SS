@@ -182,7 +182,7 @@ export default function LandingPage() {
                   <span className="text-[#39ff14] text-xs font-mono">96% Confianza</span>
                 </div>
                 <p className="text-[11px] text-[#fcfaf2]/70 leading-relaxed">
-                  "El queso se sale por los bordes y las sirven en hojas de huerta calientes. El curtido es casero con chile de cabro."
+                  &quot;El queso se sale por los bordes y las sirven en hojas de huerta calientes. El curtido es casero con chile de cabro.&quot;
                 </p>
                 <div className="pt-2 flex items-center justify-between border-t border-[#fcfaf2]/10 text-[9px] font-bold text-[#fcfaf2]/40 uppercase tracking-widest">
                   <span>Desde $0.85 c/u</span>
@@ -287,7 +287,7 @@ export default function LandingPage() {
                     <span className="text-[10px] text-[#faf6ee]/30">{rev.time}</span>
                   </div>
                   <p className="text-[#fcfaf2]/80 italic">
-                    "{rev.text}"
+                    &quot;{rev.text}&quot;
                   </p>
                   <div className="text-[9px] font-black uppercase text-[#ff5d22]">
                     📍 Reseña de: {rev.place}

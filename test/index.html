@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comedores de San Salvador – Landing (Static Copy)</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- MapLibre GL CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/maplibre-gl@4.1.3/dist/maplibre-gl.css"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 flex flex-col min-h-screen text-gray-800 dark:text-gray-100">
+  <!-- Header with search bar and dark‑mode toggle -->
+  <header class="bg-white dark:bg-gray-800 shadow p-4 flex flex-col sm:flex-row sm:items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <h1 class="text-xl font-semibold text-gray-800 dark:text-gray-100">Comedores de San Salvador</h1>
+    </div>
+    <!-- Search bar and dark‑mode toggle -->
+    <div class="flex items-center space-x-3 mt-4 sm:mt-0">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Filtrar por categoría…"
+        class="w-64 pl-3 pr-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100 dark:placeholder-gray-400"
+      />
+      <!-- Dark‑mode toggle button -->
+      <button
+        id="darkModeToggle"
+        class="dark-mode-button z-50 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border text-lg"
+        aria-label="Cambiar modo oscuro"
+        title="Cambiar modo oscuro"
+      >
+        <span id="darkModeIcon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Map container – flex‑1 fills the remaining vertical space -->
+  <section class="flex-1 relative overflow-hidden" id="mapContainer">
+    <div id="map" class="h-full w-full"></div>
+    <div id="locationStatus" class="absolute inset-0 flex items-center justify-center bg-gray-50/50 dark:bg-gray-800/50 hidden">
+      <div class="text-center">
+        <p id="locationText" class="text-gray-600 dark:text-gray-300">Cargando ubicación…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- List of nearest vendors -->
+  <aside class="bg-white dark:bg-gray-800 border-t max-h-64 overflow-y-auto">
+    <h2 class="text-lg font-medium px-4 py-2 border-b dark:border-gray-700">Los más cercanos</h2>
+    <p id="vendorsLoading" class="px-4 py-2 text-gray-500 dark:text-gray-400 hidden">Cargando puestos…</p>
+    <ul id="vendorsList" class="divide-y divide-gray-200 dark:divide-gray-700"></ul>
+  </aside>
+
+  <script src="https://unpkg.com/maplibre-gl@4.1.3/dist/maplibre-gl.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

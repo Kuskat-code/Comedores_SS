@@ -206,16 +206,25 @@ export default function DashboardPage() {
   useEffect(() => {
     async function loadData() {
       try {
-        const { data, error } = await supabase
-          .from("puestos")
-          .select("*")
-          .eq("activo", true);
-          
-        if (data && data.length > 0) {
-          setPuestos(data as Puesto[]);
+        if (supabase) {
+          const { data, error } = await supabase
+            .from("puestos")
+            .select("*")
+            .eq("activo", true);
+
+          if (data && data.length > 0) {
+            setPuestos(data as Puesto[]);
+          } else {
+            // Use fallback mock data if no data returned
+            setPuestos(MOCK_PUESTOS);
+          }
+        } else {
+          // Use fallback mock data when Supabase is not configured
+          setPuestos(MOCK_PUESTOS);
         }
       } catch (err) {
         console.error("Supabase load error, using high quality local seed data.", err);
+        setPuestos(MOCK_PUESTOS);
       } finally {
         setLoading(false);
       }
