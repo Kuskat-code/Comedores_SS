@@ -5,11 +5,17 @@ import type { Puesto } from "@/types";
 type Props = { params: { id: string } };
 
 export default async function PuestoDetallePage({ params }: Props) {
-  const { data, error } = await supabase
-    .from("puestos")
-    .select("*")
-    .eq("id", params.id)
-    .single();
+  let data: Puesto | null = null;
+  let error: any = null;
+  if (supabase) {
+    const response = await supabase
+      .from("puestos")
+      .select("*")
+      .eq("id", params.id)
+      .single();
+    data = response.data as Puesto;
+    error = response.error;
+  }
 
   if (error || !data) {
     return (
