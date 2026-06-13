@@ -20,6 +20,9 @@ export async function GET(req: NextRequest) {
   }
   const { precioMax, categoria, lat, lng, radio } = validation.data;
   // Build query using validated parameters
+  if (!supabaseAdmin) {
+    return NextResponse.json({ error: "Supabase no está configurado" }, { status: 503 });
+  }
   let query = supabaseAdmin.from('puestos').select('*').eq('activo', true);
 
   if (categoria) query = query.eq('categoria', categoria);
