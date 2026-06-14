@@ -331,7 +331,7 @@ export default function DashboardPage() {
 
   const getCategoryColorText = (cat: Categoria) => {
     switch (cat) {
-      case "pupusas": return "text-blue-500 dark:text-blue-400 bg-blue-100/50 dark:bg-blue-950/40 border border-blue-200/50 dark:border-blue-800/40";
+      case "pupusas": return "text-blue-500 dark:text-blue-400 bg-ff5d22100/50 dark:bg-ff5d22950/40 border border-blue-200/50 dark:border-blue-800/40";
       case "desayunos": return "text-amber-500 dark:text-amber-400 bg-amber-100/50 dark:bg-amber-950/40 border border-amber-200/50 dark:border-amber-800/40";
       case "comedores": return "text-ff5d22 dark:text-emerald-400 bg-emerald-100/50 dark:bg-emerald-950/40 border border-emerald-200/50 dark:border-emerald-800/40";
       case "antojitos": return "text-pink-500 dark:text-pink-400 bg-pink-100/50 dark:bg-pink-950/40 border border-pink-200/50 dark:border-pink-800/40";
@@ -385,7 +385,7 @@ export default function DashboardPage() {
                 setStepperStep(1);
                 setActiveTab("inicio");
               }}
-              className="mt-6 w-full rounded-2xl bg-ff5d22 hover:bg-blue-500 py-3 text-sm font-semibold text-white transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30"
+              className="mt-6 w-full rounded-2xl bg-ff5d22 hover:bg-ff5d22500 py-3 text-sm font-semibold text-white transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30"
             >
               Ir al Inicio
             </button>
@@ -395,7 +395,7 @@ export default function DashboardPage() {
 
       {/* DISSOLVED DECORATIVE GLOW BACKGROUNDS IN PREMIUM DARK MODE */}
       {theme === "dark" && (
-        <div className="absolute top-0 right-0 -z-10 h-[500px] w-[500px] rounded-full bg-blue-900/10 blur-[120px] pointer-events-none" />
+        <div className="absolute top-0 right-0 -z-10 h-[500px] w-[500px] rounded-full bg-ff5d22900/10 blur-[120px] pointer-events-none" />
       )}
 
       <div className="flex min-h-screen">
@@ -411,17 +411,17 @@ export default function DashboardPage() {
           {/* LOGO */}
           <div className="flex h-20 items-center justify-between px-6 border-b border-slate-100 dark:border-slate-900/80">
             <Link href="/" className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 text-lg font-bold text-white shadow-lg shadow-blue-500/20">
+              <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-tr bg-ff5d22 to-indigo-500 text-lg font-bold text-white shadow-lg shadow-blue-500/20">
                 SS
               </span>
               <div>
-                <h1 className="text-md font-bold tracking-tight bg-gradient-to-r from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                <h1 className="text-md font-bold tracking-tight bg-gradient-to-r bg-ff5d22 to-indigo-400 bg-clip-text text-transparent">
                   Comedores SS
                 </h1>
                 <p className="text-[10px] text-slate-400 dark:text-slate-500 font-medium">Guía Callejera Premium</p>
               </div>
             </Link>
-            <div className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" title="Servicio Activo" />
+            <div className="h-2 w-2 rounded-full bg-ff5d22500 animate-pulse" title="Servicio Activo" />
           </div>
 
           {/* MAIN NAV LIST */}
@@ -496,7 +496,7 @@ export default function DashboardPage() {
               </svg>
               Guardados
               {savedIds.length > 0 && (
-                <span className="ml-auto flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/50 text-[10px] font-bold text-blue-600 dark:text-blue-300">
+                <span className="ml-auto flex h-5 w-5 items-center justify-center rounded-full bg-ff5d22100 dark:bg-ff5d22900/50 text-[10px] font-bold text-blue-600 dark:text-blue-300">
                   {savedIds.length}
                 </span>
               )}
@@ -594,7 +594,7 @@ export default function DashboardPage() {
               {/* QUICK ACTION BUTTON */}
               <button
                 onClick={() => { setActiveTab("agregar"); setStepperStep(1); }}
-                className="flex items-center gap-2 rounded-2xl bg-ff5d22 hover:bg-blue-500 px-4.5 py-2.5 text-xs font-semibold text-white transition-all shadow-md shadow-blue-600/10 hover:shadow-blue-600/20 active:scale-95"
+                className="flex items-center gap-2 rounded-2xl bg-ff5d22 hover:bg-ff5d22500 px-4.5 py-2.5 text-xs font-semibold text-white transition-all shadow-md shadow-blue-600/10 hover:shadow-blue-600/20 active:scale-95"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
@@ -613,7 +613,7 @@ export default function DashboardPage() {
             {activeTab === "inicio" && (
               <div className="space-y-8 animate-fade-in">
                 {/* Personalized Welcome Banner */}
-                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-indigo-700 p-8 text-white shadow-xl shadow-blue-500/10">
+                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r bg-ff5d22 via-indigo-600 to-indigo-700 p-8 text-white shadow-xl shadow-blue-500/10">
                   <div className="relative z-10 max-w-xl">
                     <span className="rounded-full bg-white/20 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-white/90">
                       🌮 ¡Hola de nuevo, Foodie!
@@ -726,7 +726,7 @@ export default function DashboardPage() {
                               <div className="flex items-center gap-2">
                                 <h5 className="font-bold text-sm tracking-tight">{puesto.nombre}</h5>
                                 {puesto.verificado && (
-                                  <span className="flex h-4 w-4 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-950 text-[10px] font-bold text-blue-600 dark:text-blue-400" title="Verificado por Administradores">
+                                  <span className="flex h-4 w-4 items-center justify-center rounded-full bg-ff5d22100 dark:bg-ff5d22950 text-[10px] font-bold text-blue-600 dark:text-blue-400" title="Verificado por Administradores">
                                     ✓
                                   </span>
                                 )}
@@ -754,7 +754,7 @@ export default function DashboardPage() {
                                 setSelectedPuestoId(puesto.id);
                                 setActiveTab("mapa");
                               }}
-                              className="rounded-xl bg-ff5d22 hover:bg-blue-500 px-3.5 py-2 text-xs font-bold text-white transition-all shadow-md shadow-blue-500/10"
+                              className="rounded-xl bg-ff5d22 hover:bg-ff5d22500 px-3.5 py-2 text-xs font-bold text-white transition-all shadow-md shadow-blue-500/10"
                             >
                               Ver en Mapa
                             </button>
@@ -858,7 +858,7 @@ export default function DashboardPage() {
                     {/* Geolocation trigger */}
                     <button
                       onClick={requestLocation}
-                      className="flex items-center gap-2 rounded-xl bg-ff5d22 hover:bg-blue-500 text-white font-bold text-xs px-4 py-2.5 transition-all shadow-md shadow-blue-500/10"
+                      className="flex items-center gap-2 rounded-xl bg-ff5d22 hover:bg-ff5d22500 text-white font-bold text-xs px-4 py-2.5 transition-all shadow-md shadow-blue-500/10"
                     >
                       📍 Obtener Mi Ubicación
                     </button>
@@ -900,7 +900,7 @@ export default function DashboardPage() {
                           onClick={() => setSelectedPuestoId(puesto.id)}
                           className={`p-4 rounded-2xl border transition-all cursor-pointer hover:scale-[1.01] ${
                             selectedPuestoId === puesto.id
-                              ? "border-blue-500 bg-blue-500/5 dark:bg-blue-500/10"
+                              ? "border-blue-500 bg-ff5d22500/5 dark:bg-ff5d22500/10"
                               : theme === "dark" 
                                 ? "bg-[#111827] border-slate-900 hover:border-slate-800" 
                                 : "bg-white border-slate-100 shadow-sm"
@@ -1058,7 +1058,7 @@ export default function DashboardPage() {
                       { text: "#HigieneGarantizada", hits: "3.5k consultas" },
                       { text: "#MariscosFresc", hits: "1.2k consultas" }
                     ].map((chip, i) => (
-                      <span key={i} className="flex items-center gap-2 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/80 px-4 py-2 text-xs font-bold text-slate-600 dark:text-slate-300 hover:border-blue-500/50 hover:bg-blue-500/5 dark:hover:bg-blue-500/10 cursor-pointer transition-all">
+                      <span key={i} className="flex items-center gap-2 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800/80 px-4 py-2 text-xs font-bold text-slate-600 dark:text-slate-300 hover:border-blue-500/50 hover:bg-ff5d22500/5 dark:hover:bg-ff5d22500/10 cursor-pointer transition-all">
                         <span>{chip.text}</span>
                         <span className="text-[9px] font-medium text-slate-400">({chip.hits})</span>
                       </span>
@@ -1228,8 +1228,8 @@ export default function DashboardPage() {
                       </div>
 
                       {/* Drag and drop visual zone */}
-                      <div className="border-2 border-dashed border-blue-500/40 rounded-3xl p-10 text-center hover:bg-blue-500/5 hover:border-blue-500 transition-all cursor-pointer">
-                        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-100 dark:bg-blue-950 text-2xl text-blue-600 dark:text-blue-400 mb-4 animate-pulse">
+                      <div className="border-2 border-dashed border-blue-500/40 rounded-3xl p-10 text-center hover:bg-ff5d22500/5 hover:border-blue-500 transition-all cursor-pointer">
+                        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-ff5d22100 dark:bg-ff5d22950 text-2xl text-blue-600 dark:text-blue-400 mb-4 animate-pulse">
                           📸
                         </div>
                         <h5 className="font-bold text-xs text-slate-700 dark:text-slate-200">Arrastra tus fotos de comida aquí</h5>
@@ -1341,7 +1341,7 @@ export default function DashboardPage() {
 
                     <button
                       onClick={handleNextStep}
-                      className="px-6 py-3 rounded-2xl bg-ff5d22 hover:bg-blue-500 text-white font-bold text-xs transition-all shadow-lg shadow-blue-500/20 active:scale-95"
+                      className="px-6 py-3 rounded-2xl bg-ff5d22 hover:bg-ff5d22500 text-white font-bold text-xs transition-all shadow-lg shadow-blue-500/20 active:scale-95"
                     >
                       {stepperStep === 5 ? "Publicar Local" : "Siguiente"}
                     </button>
@@ -1372,7 +1372,7 @@ export default function DashboardPage() {
                     </p>
                     <button
                       onClick={() => setActiveTab("mapa")}
-                      className="mt-5 rounded-2xl bg-ff5d22 hover:bg-blue-500 text-white font-bold text-xs px-5 py-3 transition-all shadow-md shadow-blue-500/10"
+                      className="mt-5 rounded-2xl bg-ff5d22 hover:bg-ff5d22500 text-white font-bold text-xs px-5 py-3 transition-all shadow-md shadow-blue-500/10"
                     >
                       Explorar el Mapa
                     </button>
@@ -1407,7 +1407,7 @@ export default function DashboardPage() {
                                 setSelectedPuestoId(puesto.id);
                                 setActiveTab("mapa");
                               }}
-                              className="rounded-xl bg-ff5d22 hover:bg-blue-500 text-white text-[10px] font-bold px-3 py-2 shadow-md shadow-blue-500/10"
+                              className="rounded-xl bg-ff5d22 hover:bg-ff5d22500 text-white text-[10px] font-bold px-3 py-2 shadow-md shadow-blue-500/10"
                             >
                               Ver en Mapa
                             </button>
@@ -1450,7 +1450,7 @@ export default function DashboardPage() {
                     theme === "dark" ? "bg-[#111827]/60 border-slate-900" : "bg-white border-slate-100 shadow-sm"
                   }`}>
                     <h4 className="font-bold text-sm tracking-tight mb-6 flex items-center gap-2">
-                      <span className="flex h-2.5 w-2.5 rounded-full bg-blue-500 animate-ping" />
+                      <span className="flex h-2.5 w-2.5 rounded-full bg-ff5d22500 animate-ping" />
                       Feed de Actividad en Vivo
                     </h4>
 
