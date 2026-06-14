@@ -333,7 +333,7 @@ export default function DashboardPage() {
     switch (cat) {
       case "pupusas": return "text-blue-500 dark:text-blue-400 bg-blue-100/50 dark:bg-blue-950/40 border border-blue-200/50 dark:border-blue-800/40";
       case "desayunos": return "text-amber-500 dark:text-amber-400 bg-amber-100/50 dark:bg-amber-950/40 border border-amber-200/50 dark:border-amber-800/40";
-      case "comedores": return "text-emerald-500 dark:text-emerald-400 bg-emerald-100/50 dark:bg-emerald-950/40 border border-emerald-200/50 dark:border-emerald-800/40";
+      case "comedores": return "text-ff5d22 dark:text-emerald-400 bg-emerald-100/50 dark:bg-emerald-950/40 border border-emerald-200/50 dark:border-emerald-800/40";
       case "antojitos": return "text-pink-500 dark:text-pink-400 bg-pink-100/50 dark:bg-pink-950/40 border border-pink-200/50 dark:border-pink-800/40";
       case "fruta": return "text-lime-500 dark:text-lime-400 bg-lime-100/50 dark:bg-lime-950/40 border border-lime-200/50 dark:border-lime-800/40";
       case "bebidas": return "text-cyan-500 dark:text-cyan-400 bg-cyan-100/50 dark:bg-cyan-950/40 border border-cyan-200/50 dark:border-cyan-800/40";
@@ -385,7 +385,7 @@ export default function DashboardPage() {
                 setStepperStep(1);
                 setActiveTab("inicio");
               }}
-              className="mt-6 w-full rounded-2xl bg-blue-600 hover:bg-blue-500 py-3 text-sm font-semibold text-white transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30"
+              className="mt-6 w-full rounded-2xl bg-ff5d22 hover:bg-blue-500 py-3 text-sm font-semibold text-white transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30"
             >
               Ir al Inicio
             </button>
@@ -430,7 +430,7 @@ export default function DashboardPage() {
               onClick={() => { setActiveTab("inicio"); setSelectedPuestoId(null); }}
               className={`flex w-full items-center gap-3.5 rounded-2xl px-4 py-3.5 text-sm font-medium transition-all ${
                 activeTab === "inicio"
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-600/15"
+                  ? "bg-ff5d22 text-white shadow-lg shadow-blue-600/15"
                   : "text-slate-600 dark:text-slate-400 hover:bg-slate-100/70 dark:hover:bg-slate-900/60"
               }`}
             >
@@ -444,7 +444,7 @@ export default function DashboardPage() {
               onClick={() => { setActiveTab("mapa"); }}
               className={`flex w-full items-center gap-3.5 rounded-2xl px-4 py-3.5 text-sm font-medium transition-all ${
                 activeTab === "mapa"
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-600/15"
+                  ? "bg-ff5d22 text-white shadow-lg shadow-blue-600/15"
                   : "text-slate-600 dark:text-slate-400 hover:bg-slate-100/70 dark:hover:bg-slate-900/60"
               }`}
             >
@@ -459,7 +459,7 @@ export default function DashboardPage() {
               onClick={() => { setActiveTab("rankings"); }}
               className={`flex w-full items-center gap-3.5 rounded-2xl px-4 py-3.5 text-sm font-medium transition-all ${
                 activeTab === "rankings"
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-600/15"
+                  ? "bg-ff5d22 text-white shadow-lg shadow-blue-600/15"
                   : "text-slate-600 dark:text-slate-400 hover:bg-slate-100/70 dark:hover:bg-slate-900/60"
               }`}
             >
@@ -473,7 +473,7 @@ export default function DashboardPage() {
               onClick={() => { setActiveTab("agregar"); }}
               className={`flex w-full items-center gap-3.5 rounded-2xl px-4 py-3.5 text-sm font-medium transition-all ${
                 activeTab === "agregar"
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-600/15"
+                  ? "bg-ff5d22 text-white shadow-lg shadow-blue-600/15"
                   : "text-slate-600 dark:text-slate-400 hover:bg-slate-100/70 dark:hover:bg-slate-900/60"
               }`}
             >
@@ -487,7 +487,7 @@ export default function DashboardPage() {
               onClick={() => { setActiveTab("guardados"); }}
               className={`flex w-full items-center gap-3.5 rounded-2xl px-4 py-3.5 text-sm font-medium transition-all ${
                 activeTab === "guardados"
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-600/15"
+                  ? "bg-ff5d22 text-white shadow-lg shadow-blue-600/15"
                   : "text-slate-600 dark:text-slate-400 hover:bg-slate-100/70 dark:hover:bg-slate-900/60"
               }`}
             >
@@ -506,7 +506,7 @@ export default function DashboardPage() {
               onClick={() => { setActiveTab("actividad"); }}
               className={`flex w-full items-center gap-3.5 rounded-2xl px-4 py-3.5 text-sm font-medium transition-all ${
                 activeTab === "actividad"
-                  ? "bg-blue-600 text-white shadow-lg shadow-blue-600/15"
+                  ? "bg-ff5d22 text-white shadow-lg shadow-blue-600/15"
                   : "text-slate-600 dark:text-slate-400 hover:bg-slate-100/70 dark:hover:bg-slate-900/60"
               }`}
             >
@@ -528,7 +528,7 @@ export default function DashboardPage() {
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className={`relative inline-flex h-6.5 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
-                  theme === "dark" ? "bg-blue-600" : "bg-slate-300"
+                  theme === "dark" ? "bg-ff5d22" : "bg-slate-300"
                 }`}
               >
                 <span
@@ -576,7 +576,7 @@ export default function DashboardPage() {
               {/* GEOLOCATION NOTIFIER */}
               {userCoords ? (
                 <div className="flex items-center gap-2 rounded-full bg-emerald-100/80 dark:bg-emerald-950/30 px-3 py-1.5 border border-emerald-200/50 dark:border-emerald-900/40 text-xs font-medium text-emerald-600 dark:text-emerald-400">
-                  <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="h-2 w-2 rounded-full bg-ff5d22 animate-pulse" />
                   Ubicación Activa
                 </div>
               ) : (
@@ -594,7 +594,7 @@ export default function DashboardPage() {
               {/* QUICK ACTION BUTTON */}
               <button
                 onClick={() => { setActiveTab("agregar"); setStepperStep(1); }}
-                className="flex items-center gap-2 rounded-2xl bg-blue-600 hover:bg-blue-500 px-4.5 py-2.5 text-xs font-semibold text-white transition-all shadow-md shadow-blue-600/10 hover:shadow-blue-600/20 active:scale-95"
+                className="flex items-center gap-2 rounded-2xl bg-ff5d22 hover:bg-blue-500 px-4.5 py-2.5 text-xs font-semibold text-white transition-all shadow-md shadow-blue-600/10 hover:shadow-blue-600/20 active:scale-95"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
@@ -649,7 +649,7 @@ export default function DashboardPage() {
                       label: "Nivel de Colaborador",
                       value: "Oro",
                       change: "78% al siguiente nivel",
-                      color: "text-emerald-500",
+                      color: "text-ff5d22",
                       emoji: "⭐",
                       progress: 78
                     },
@@ -744,7 +744,7 @@ export default function DashboardPage() {
                           <div className="mt-4 sm:mt-0 flex items-center gap-3.5 w-full sm:w-auto justify-end">
                             <span className={`rounded-xl px-3 py-1 text-[10px] font-extrabold uppercase border ${
                               puesto.activo 
-                                ? "bg-emerald-500/10 text-emerald-500 border-emerald-500/20" 
+                                ? "bg-ff5d22/10 text-ff5d22 border-ff5d22/20" 
                                 : "bg-rose-500/10 text-rose-500 border-rose-500/20"
                             }`}>
                               {puesto.activo ? "Abierto" : "Cerrado"}
@@ -754,7 +754,7 @@ export default function DashboardPage() {
                                 setSelectedPuestoId(puesto.id);
                                 setActiveTab("mapa");
                               }}
-                              className="rounded-xl bg-blue-600 hover:bg-blue-500 px-3.5 py-2 text-xs font-bold text-white transition-all shadow-md shadow-blue-500/10"
+                              className="rounded-xl bg-ff5d22 hover:bg-blue-500 px-3.5 py-2 text-xs font-bold text-white transition-all shadow-md shadow-blue-500/10"
                             >
                               Ver en Mapa
                             </button>
@@ -810,7 +810,7 @@ export default function DashboardPage() {
                       onClick={() => setFiltros({ ...filtros, categorias: [] })}
                       className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border ${
                         !filtros.categorias || filtros.categorias.length === 0
-                          ? "bg-blue-600 text-white border-blue-600"
+                          ? "bg-ff5d22 text-white border-blue-600"
                           : "text-slate-500 dark:text-slate-400 border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900/60"
                       }`}
                     >
@@ -827,7 +827,7 @@ export default function DashboardPage() {
                         }}
                         className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold transition-all border ${
                           filtros.categorias?.includes(cat)
-                            ? "bg-blue-600 text-white border-blue-600"
+                            ? "bg-ff5d22 text-white border-blue-600"
                             : "text-slate-500 dark:text-slate-400 border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900/60"
                         }`}
                       >
@@ -844,7 +844,7 @@ export default function DashboardPage() {
                       <button
                         onClick={() => setFiltros({ ...filtros, soloAbiertos: !filtros.soloAbiertos })}
                         className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
-                          filtros.soloAbiertos ? "bg-emerald-500" : "bg-slate-300 dark:bg-slate-800"
+                          filtros.soloAbiertos ? "bg-ff5d22" : "bg-slate-300 dark:bg-slate-800"
                         }`}
                       >
                         <span
@@ -858,7 +858,7 @@ export default function DashboardPage() {
                     {/* Geolocation trigger */}
                     <button
                       onClick={requestLocation}
-                      className="flex items-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs px-4 py-2.5 transition-all shadow-md shadow-blue-500/10"
+                      className="flex items-center gap-2 rounded-xl bg-ff5d22 hover:bg-blue-500 text-white font-bold text-xs px-4 py-2.5 transition-all shadow-md shadow-blue-500/10"
                     >
                       📍 Obtener Mi Ubicación
                     </button>
@@ -925,7 +925,7 @@ export default function DashboardPage() {
                                 ? `A ${puesto.distance >= 1000 ? `${(puesto.distance / 1000).toFixed(1)} km` : `${puesto.distance} m`}`
                                 : "Distancia no medida"}
                             </span>
-                            <span className={puesto.activo ? "text-emerald-500" : "text-rose-500"}>
+                            <span className={puesto.activo ? "text-ff5d22" : "text-rose-500"}>
                               {puesto.activo ? "● Abierto ahora" : "● Cerrado"}
                             </span>
                           </div>
@@ -956,7 +956,7 @@ export default function DashboardPage() {
                   ].map((tab) => (
                     <button
                       key={tab.id}
-                      className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-bold transition-all bg-blue-600 text-white shadow-lg shadow-blue-500/20"
+                      className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-bold transition-all bg-ff5d22 text-white shadow-lg shadow-blue-500/20"
                     >
                       <span>{tab.emoji}</span>
                       <span>{tab.label}</span>
@@ -1010,7 +1010,7 @@ export default function DashboardPage() {
                     theme === "dark" ? "bg-[#111827]/60 border-slate-900" : "bg-white border-slate-100 shadow-sm"
                   }`}>
                     <div className="flex items-center justify-between mb-6">
-                      <h4 className="font-extrabold text-sm tracking-tight uppercase text-emerald-500">🍛 Top Almuerzos y Caseros</h4>
+                      <h4 className="font-extrabold text-sm tracking-tight uppercase text-ff5d22">🍛 Top Almuerzos y Caseros</h4>
                       <span className="text-[10px] font-bold text-slate-400 bg-slate-100 dark:bg-slate-900 px-2.5 py-1 rounded-lg">Filtro Activo</span>
                     </div>
 
@@ -1084,7 +1084,7 @@ export default function DashboardPage() {
                     <div className="absolute top-1/2 left-0 right-0 h-1 bg-slate-200 dark:bg-slate-800 transform -translate-y-1/2 -z-10" />
                     {/* Active Progress Line */}
                     <div 
-                      className="absolute top-1/2 left-0 h-1 bg-blue-600 transform -translate-y-1/2 -z-10 transition-all duration-300"
+                      className="absolute top-1/2 left-0 h-1 bg-ff5d22 transform -translate-y-1/2 -z-10 transition-all duration-300"
                       style={{ width: `${((stepperStep - 1) / 4) * 100}%` }}
                     />
 
@@ -1094,7 +1094,7 @@ export default function DashboardPage() {
                           onClick={() => setStepperStep(step)}
                           className={`flex h-10 w-10 items-center justify-center rounded-full text-xs font-bold border-2 transition-all ${
                             step < stepperStep
-                              ? "bg-blue-600 border-blue-600 text-white shadow-lg"
+                              ? "bg-ff5d22 border-blue-600 text-white shadow-lg"
                               : step === stepperStep
                                 ? "bg-white dark:bg-[#070b13] border-blue-600 text-blue-600 scale-110 font-black shadow-md shadow-blue-500/20"
                                 : "bg-slate-100 dark:bg-slate-900 border-slate-300 dark:border-slate-800 text-slate-400"
@@ -1261,7 +1261,7 @@ export default function DashboardPage() {
                         <div className="flex justify-between items-center text-xs font-bold">
                           <label className="text-slate-400 uppercase">Nivel de Higiene Estimado</label>
                           <span className={`${
-                            formHigiene >= 85 ? "text-emerald-500" :
+                            formHigiene >= 85 ? "text-ff5d22" :
                             formHigiene >= 60 ? "text-amber-500" : "text-rose-500"
                           }`}>{formHigiene}% (Excelente)</span>
                         </div>
@@ -1282,7 +1282,7 @@ export default function DashboardPage() {
                         <div className="h-2 w-full rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
                           <div 
                             className={`h-full transition-all duration-300 ${
-                              formHigiene >= 80 ? "bg-emerald-500" :
+                              formHigiene >= 80 ? "bg-ff5d22" :
                               formHigiene >= 65 ? "bg-amber-500" : "bg-rose-500"
                             }`} 
                             style={{ width: `${formHigiene}%` }} 
@@ -1295,7 +1295,7 @@ export default function DashboardPage() {
                         <div className="flex justify-between items-center text-xs font-bold">
                           <label className="text-slate-400 uppercase">Nivel de Seguridad de la Zona</label>
                           <span className={`${
-                            formSeguridad >= 85 ? "text-emerald-500" :
+                            formSeguridad >= 85 ? "text-ff5d22" :
                             formSeguridad >= 60 ? "text-amber-500" : "text-rose-500"
                           }`}>{formSeguridad}% (Seguro)</span>
                         </div>
@@ -1315,7 +1315,7 @@ export default function DashboardPage() {
                         <div className="h-2 w-full rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
                           <div 
                             className={`h-full transition-all duration-300 ${
-                              formSeguridad >= 80 ? "bg-emerald-500" :
+                              formSeguridad >= 80 ? "bg-ff5d22" :
                               formSeguridad >= 65 ? "bg-amber-500" : "bg-rose-500"
                             }`} 
                             style={{ width: `${formSeguridad}%` }} 
@@ -1341,7 +1341,7 @@ export default function DashboardPage() {
 
                     <button
                       onClick={handleNextStep}
-                      className="px-6 py-3 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition-all shadow-lg shadow-blue-500/20 active:scale-95"
+                      className="px-6 py-3 rounded-2xl bg-ff5d22 hover:bg-blue-500 text-white font-bold text-xs transition-all shadow-lg shadow-blue-500/20 active:scale-95"
                     >
                       {stepperStep === 5 ? "Publicar Local" : "Siguiente"}
                     </button>
@@ -1372,7 +1372,7 @@ export default function DashboardPage() {
                     </p>
                     <button
                       onClick={() => setActiveTab("mapa")}
-                      className="mt-5 rounded-2xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs px-5 py-3 transition-all shadow-md shadow-blue-500/10"
+                      className="mt-5 rounded-2xl bg-ff5d22 hover:bg-blue-500 text-white font-bold text-xs px-5 py-3 transition-all shadow-md shadow-blue-500/10"
                     >
                       Explorar el Mapa
                     </button>
@@ -1407,7 +1407,7 @@ export default function DashboardPage() {
                                 setSelectedPuestoId(puesto.id);
                                 setActiveTab("mapa");
                               }}
-                              className="rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-bold px-3 py-2 shadow-md shadow-blue-500/10"
+                              className="rounded-xl bg-ff5d22 hover:bg-blue-500 text-white text-[10px] font-bold px-3 py-2 shadow-md shadow-blue-500/10"
                             >
                               Ver en Mapa
                             </button>
@@ -1428,7 +1428,7 @@ export default function DashboardPage() {
                 {/* Community Metrics Summary */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {[
-                    { label: "Reportes de Hoy", value: "+18 activos", desc: "Aperturas y cierres validados", color: "border-emerald-500/20 text-emerald-500" },
+                    { label: "Reportes de Hoy", value: "+18 activos", desc: "Aperturas y cierres validados", color: "border-ff5d22/20 text-ff5d22" },
                     { label: "Cierres Reportados", value: "2 locales", desc: "Locales confirmados inactivos hoy", color: "border-rose-500/20 text-rose-500" },
                     { label: "Fotos Subidas Hoy", value: "35 imágenes", desc: "Actualización visual de platillos", color: "border-blue-500/20 text-blue-500" }
                   ].map((metric, i) => (
@@ -1459,7 +1459,7 @@ export default function DashboardPage() {
                       {[
                         { user: "Juan C.", action: "confirmó abierto", target: "Pupusería El Triángulo", time: "hace 5 min", avatar: "J", color: "from-blue-500 to-indigo-500" },
                         { user: "María L.", action: "subió 3 fotos a", target: "Desayunos Doña Cleo", time: "hace 15 min", avatar: "M", color: "from-purple-500 to-pink-500" },
-                        { user: "Carlos R.", action: "actualizó los precios de", target: "Comedor Familiar Vista Hermosa", time: "hace 32 min", avatar: "C", color: "from-emerald-500 to-teal-500" },
+                        { user: "Carlos R.", action: "actualizó los precios de", target: "Comedor Familiar Vista Hermosa", time: "hace 32 min", avatar: "C", color: "from-ff5d22 to-teal-500" },
                         { user: "Sofia G.", action: "reportó cerrado temporalmente", target: "Mariscos El Malecón Callejero", time: "hace 1 hora", avatar: "S", color: "from-rose-500 to-orange-500" }
                       ].map((item, i) => (
                         <div key={i} className="relative">
