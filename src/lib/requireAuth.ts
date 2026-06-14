@@ -1,5 +1,4 @@
-import supabaseAuth from './supabase-auth';
-import type { User } from '@supabase/supabase-js';
+import getSupabaseAuth from './supabase-auth';
 
 /**
  * Checks the Authorization header for a Bearer token and validates it with Supabase.
@@ -13,7 +12,7 @@ export async function requireAuth(request: Request): Promise<string> {
   }
   const token = tokenMatch[1];
 
-  const { data, error } = await supabaseAuth.auth.getUser(token);
+  const { data, error } = await getSupabaseAuth().auth.getUser(token);
   if (error || !data?.user) {
     throw new Error('Invalid or expired token');
   }
