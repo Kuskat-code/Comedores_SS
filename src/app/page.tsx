@@ -70,7 +70,6 @@ export default function LandingPage() {
               <h1 className="text-lg font-black uppercase tracking-tighter text-[#fcfaf2]">
                 Comedores <span className="text-[#ff5d22]">SS</span>
               </h1>
-              <p className="text-[9px] text-[#faf6ee]/50 font-bold uppercase tracking-widest">Cultura de Calle</p>
             </div>
           </Link>
 
@@ -101,7 +100,7 @@ export default function LandingPage() {
           {/* LEFT: Typographic Impact Column */}
           <div className="lg:col-span-7 space-y-8">
             <span className="inline-block text-[10px] font-black uppercase tracking-widest border-2 border-[#ff5d22] text-[#ff5d22] px-3.5 py-1.5 rounded-sm bg-[#ff5d22]/5">
-              🍺 Guía Documental No-Oficial
+                Guía Documental
             </span>
 
             {/* The Aggressive Editorial Headline */}
