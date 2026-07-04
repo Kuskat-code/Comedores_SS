@@ -331,10 +331,10 @@ export default function DashboardPage() {
 
   const getCategoryColorText = (cat: Categoria) => {
     switch (cat) {
-      case "pupusas": return "text-blue-500 dark:text-blue-400 bg-ff5d22100/50 dark:bg-ff5d22950/40 border border-blue-200/50 dark:border-blue-800/40";
-      case "desayunos": return "text-amber-500 dark:text-amber-400 bg-amber-100/50 dark:bg-amber-950/40 border border-amber-200/50 dark:border-amber-800/40";
-      case "comedores": return "text-ff5d22 dark:text-emerald-400 bg-emerald-100/50 dark:bg-emerald-950/40 border border-emerald-200/50 dark:border-emerald-800/40";
-      case "antojitos": return "text-pink-500 dark:text-pink-400 bg-pink-100/50 dark:bg-pink-950/40 border border-pink-200/50 dark:border-pink-800/40";
+      case "pupusas": return "text-ff5d22 bg-ff5d22/10 border border-ff5d22/30";
+      case "desayunos": return "text-39ff14 bg-39ff14/10 border border-39ff14/30";
+      case "comedores": return "text-3b82f6 bg-3b82f6/10 border border-3b82f6/30";
+      case "antojitos": return "text-3b82f6 bg-3b82f6/10 border border-3b82f6/30";
       case "fruta": return "text-lime-500 dark:text-lime-400 bg-lime-100/50 dark:bg-lime-950/40 border border-lime-200/50 dark:border-lime-800/40";
       case "bebidas": return "text-cyan-500 dark:text-cyan-400 bg-cyan-100/50 dark:bg-cyan-950/40 border border-cyan-200/50 dark:border-cyan-800/40";
       case "mariscos": return "text-indigo-500 dark:text-indigo-400 bg-indigo-100/50 dark:bg-indigo-950/40 border border-indigo-200/50 dark:border-indigo-800/40";
@@ -546,7 +546,7 @@ export default function DashboardPage() {
               </div>
               <div className="flex-1 overflow-hidden">
                 <p className="truncate text-xs font-bold text-slate-700 dark:text-slate-200">Foodie_Salvador</p>
-                <span className="text-[10px] text-blue-500 dark:text-blue-400 font-semibold uppercase tracking-wider">Colaborador Oro</span>
+                <span className="text-[10px] text-ff5d22 dark:text-blue-400 font-semibold uppercase tracking-wider">Colaborador Oro</span>
               </div>
             </div>
           </div>
@@ -642,7 +642,7 @@ export default function DashboardPage() {
                       label: "Locales Activos",
                       value: puestos.length,
                       change: "+4 agregados hoy",
-                      color: "text-blue-500",
+                      color: "text-ff5d22",
                       emoji: "🏪",
                     },
                     {
@@ -704,7 +704,7 @@ export default function DashboardPage() {
                       <h4 className="text-md font-bold tracking-tight">Recomendaciones Rápidas</h4>
                       <button 
                         onClick={() => setActiveTab("rankings")}
-                        className="text-xs font-bold text-blue-500 hover:text-blue-600"
+                        className="text-xs font-bold text-ff5d22 hover:text-blue-600"
                       >
                         Ver todos los rankings
                       </button>
@@ -770,7 +770,7 @@ export default function DashboardPage() {
                       <h4 className="text-md font-bold tracking-tight">Mapa Rápido</h4>
                       <button
                         onClick={requestLocation}
-                        className="text-xs font-bold text-blue-500 hover:text-blue-600"
+                        className="text-xs font-bold text-ff5d22 hover:text-blue-600"
                       >
                         Centrar GPS
                       </button>
@@ -914,7 +914,7 @@ export default function DashboardPage() {
                               <h5 className="font-bold text-sm mt-2 tracking-tight">{puesto.nombre}</h5>
                               <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1 mt-1">{puesto.direccion}</p>
                             </div>
-                            <span className="text-sm font-bold text-blue-500">
+                            <span className="text-sm font-bold text-ff5d22">
                               {getCategoryEmoji(puesto.categoria)}
                             </span>
                           </div>
@@ -972,7 +972,7 @@ export default function DashboardPage() {
                     theme === "dark" ? "bg-[#111827]/60 border-slate-900" : "bg-white border-slate-100 shadow-sm"
                   }`}>
                     <div className="flex items-center justify-between mb-6">
-                      <h4 className="font-extrabold text-sm tracking-tight uppercase text-blue-500">🏆 Top Comida Tradicional</h4>
+                      <h4 className="font-extrabold text-sm tracking-tight uppercase text-ff5d22">🏆 Top Comida Tradicional</h4>
                       <span className="text-[10px] font-bold text-slate-400 bg-slate-100 dark:bg-slate-900 px-2.5 py-1 rounded-lg">Filtro Activo</span>
                     </div>
 
@@ -1103,7 +1103,7 @@ export default function DashboardPage() {
                           {step < stepperStep ? "✓" : step}
                         </button>
                         <span className={`text-[10px] font-bold mt-2 hidden sm:inline ${
-                          step === stepperStep ? "text-blue-500 font-extrabold" : "text-slate-400"
+                          step === stepperStep ? "text-ff5d22 font-extrabold" : "text-slate-400"
                         }`}>
                           {step === 1 ? "Básicos" : step === 2 ? "GPS" : step === 3 ? "Precios" : step === 4 ? "Fotos" : "Confianza"}
                         </span>
@@ -1430,7 +1430,7 @@ export default function DashboardPage() {
                   {[
                     { label: "Reportes de Hoy", value: "+18 activos", desc: "Aperturas y cierres validados", color: "border-ff5d22/20 text-ff5d22" },
                     { label: "Cierres Reportados", value: "2 locales", desc: "Locales confirmados inactivos hoy", color: "border-rose-500/20 text-rose-500" },
-                    { label: "Fotos Subidas Hoy", value: "35 imágenes", desc: "Actualización visual de platillos", color: "border-blue-500/20 text-blue-500" }
+                    { label: "Fotos Subidas Hoy", value: "35 imágenes", desc: "Actualización visual de platillos", color: "border-blue-500/20 text-ff5d22" }
                   ].map((metric, i) => (
                     <div key={i} className={`p-6 rounded-3xl border ${
                       theme === "dark" ? "bg-[#111827]/60 border-slate-900" : "bg-white border-slate-100 shadow-sm"
@@ -1472,7 +1472,7 @@ export default function DashboardPage() {
                             </div>
                             <div className="flex-1 text-xs">
                               <p className="text-slate-700 dark:text-slate-200">
-                                <b>{item.user}</b> {item.action} <span className="font-bold text-blue-500">{item.target}</span>
+                                <b>{item.user}</b> {item.action} <span className="font-bold text-ff5d22">{item.target}</span>
                               </p>
                               <span className="text-[10px] text-slate-400 font-medium block mt-0.5">{item.time}</span>
                             </div>
